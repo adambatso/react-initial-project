@@ -1,8 +1,27 @@
 {
+  
+  "eslint.enable": true,
+  "files.exclude": {
+    "node_modules": true,
+    ".npm-offline-cache": true
+  },
+  "[typescript]": {
+    "editor.formatOnSave": true
+  },
+  "[typescriptreact]": {
+    "editor.formatOnSave": true
+  },
   // Set the default
   "editor.formatOnSave": false,
   // Enable per-language
   "[javascript]": {
     "editor.formatOnSave": true
-  }
+  },
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact"
+  ]
+  
 }

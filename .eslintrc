@@ -6,7 +6,8 @@
       "commonjs": true,
       "node": true
     },
-    "plugins": ["import", "react"],
+    "parser": "@typescript-eslint/parser",
+    "plugins": ["import", "react", "@typescript-eslint"],
     "extends": ["eslint:recommended", "plugin:react/recommended", "plugin:prettier/recommended"],
     "parserOptions": {
       "ecmaVersion": 2018,

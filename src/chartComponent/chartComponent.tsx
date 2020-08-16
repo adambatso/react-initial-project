@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import { ChartTitle } from './chartComponent.style';
 
 export const ChartComponent = () => {
