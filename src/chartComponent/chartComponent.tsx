@@ -9,7 +9,6 @@ export const ChartComponent = () => {
         label: 'somethingA',
         values: [{x: 'SomethingA', y: y}, {x: 'SomethingB', y: 4}, {x: 'SomethingC', y: 3}]
     }];
-    console.log('%c y', 'font-size:20px;color:lime;', y);    
     return <><ChartTitle>
         This is my first Chart
     </ChartTitle>
