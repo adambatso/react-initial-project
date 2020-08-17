@@ -1,3 +1,4 @@
-# react-initial-project
+#run project
+npm i 
+npm run start
 
-This project is all about react boilerplate. it include costume webpack for typescript, lintjs, test and etc
