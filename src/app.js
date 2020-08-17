@@ -1,8 +1,8 @@
 import React from 'react'
-import { ChartComponent } from './chartComponent/chartComponent'
-
+// import { ChartComponent } from './chartComponent/chartComponent'
+import { ChartPage } from './components/chartPage/chartPage'
 export const App = () => {
     return (
-        <ChartComponent />
+        <ChartPage />
     )
 }
