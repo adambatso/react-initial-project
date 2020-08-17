@@ -46,9 +46,30 @@ class chartStore {
 
     filteredData = filteredData.slice(0, selectedItemFilter);
 
-    this.filteredDataCached[cacheDataKey] = filteredData;
+    //TODO:: do it dynamic
+    const dataBySegment = {
+      segmentA: [],
+      segmentB: [],
+      segmentC: [],
+      segmentD: [],
+    };
+    //TODO:: need to move it to store so it will be saved in cache
+    filteredData.forEach((element) => {
+      Object.keys(element).forEach((key) => {
+        if (dataBySegment[key]) {
+          const date = new Date(element.date);
 
-    return filteredData;
+          dataBySegment[key].push({
+            y: element[key],
+            label: date.getMonth(),
+          });
+        }
+      });
+    });
+
+    this.filteredDataCached[cacheDataKey] = dataBySegment;
+
+    return dataBySegment;
   }
 }
 
