@@ -24,6 +24,7 @@ const DropdownItemsBox = styled.div`
   flex-direction: column;
   transform: translate(0, 40px);
   top: 0;
+  z-index: 3;
   transition: opacity 0.2s, max-height 0.2s;
   opacity: ${(props) => (props.isOpen ? '1' : '0')};
   max-height: ${(props) => (props.isOpen ? '400px' : '0px')};
