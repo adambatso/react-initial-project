@@ -1,19 +1,27 @@
 import React from 'react';
+import { Provider } from 'mobx-react';
 import chartData from '../../../public/data.json5';
-import { GenericDropdown } from '../genericDropdown/genericDropdown';
+import { ChartDashboard, ChartPageWrapper, ChartComponentWrapper } from './chartPage.style';
+
+import chartStore from '../../stores/chart-store';
+import ChartComponent from '../chartComponent/chartComponent';
 
 export const ChartPage = () => {
   console.log('%c chartData', 'font-size:20px;color:lime;', chartData);
 
-  const genericDropdownProps = {
-    onSelectedItem: (index) => {
-      console.log('%c selectedindex', 'font-size:20px;color:lime;', index);
-    },
-    itemList: ['check', 'check2', 'check3', 'check4'],
-  };
+  const store = new chartStore(chartData);
+
+  //TODO:: need to separate dashboard
   return (
-    <div>
-      <GenericDropdown {...genericDropdownProps} />
-    </div>
+    <Provider charStore={store}>
+      <ChartPageWrapper>
+        <ChartDashboard>
+          <h2>My Deshboard</h2>
+        </ChartDashboard>
+        <ChartComponentWrapper>
+          <ChartComponent />
+        </ChartComponentWrapper>
+      </ChartPageWrapper>
+    </Provider>
   );
 };

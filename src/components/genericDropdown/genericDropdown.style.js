@@ -17,21 +17,25 @@ const DropdownButton = styled.button`
   z-index: 2;
 `;
 
+//TODO:: remove display condition for animation
 const DropdownItemsBox = styled.div`
   position: absolute;
   display: flex;
   flex-direction: column;
-  padding: 10px;
+  transform: translate(0, 40px);
   top: 0;
   transition: opacity 0.2s, max-height 0.2s;
   opacity: ${(props) => (props.isOpen ? '1' : '0')};
   max-height: ${(props) => (props.isOpen ? '400px' : '0px')};
+  display: ${(props) => (props.isOpen ? 'flex' : 'none')};
   cursor: pointer;
-  background-color: gray;
+  background-color: rgb(170, 170, 170);
 `;
 const DropdownItemWrapper = styled.div`
   font-size: 12px;
   padding: 10px;
+  color: ${(props) => (props.isSelected ? 'black' : 'white')};
+  font-weight: ${(props) => (props.isSelected ? '600' : '400')};
 `;
 
 export { DropdownWrapper, DropdownItemsBox, DropdownItemWrapper, DropdownButton };

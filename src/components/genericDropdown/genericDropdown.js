@@ -24,12 +24,16 @@ export const GenericDropdown = (props) => {
         setIsOpen(false);
       };
       return (
-        <DropdownItemWrapper key={`${itemName}_${index}`} onClick={onClick}>
+        <DropdownItemWrapper
+          isSelected={index === selectedIndex}
+          key={`${itemName}_${index}`}
+          onClick={onClick}
+        >
           {itemName}
         </DropdownItemWrapper>
       );
     });
-  }, [props.itemList]);
+  }, [props.itemList, selectedIndex]);
 
   //TODO:: need to define the behaviour when clicking out of the dropdown so it will be closed and then change the dropdown onClick function
   console.log('%c isOpen', 'font-size:20px;color:lime;', isOpen);
@@ -43,6 +47,6 @@ export const GenericDropdown = (props) => {
 
 GenericDropdown.propTypes = {
   onSelectedItem: PropTypes.func.isRequired,
-  itemList: PropTypes.arrayOf(PropTypes.string),
+  itemList: PropTypes.arrayOf(PropTypes.any),
   defaultItemIndex: PropTypes.number,
 };
