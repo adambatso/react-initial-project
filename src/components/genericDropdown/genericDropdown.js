@@ -36,7 +36,7 @@ export const GenericDropdown = (props) => {
   }, [props.itemList, selectedIndex]);
 
   //TODO:: need to define the behaviour when clicking out of the dropdown so it will be closed and then change the dropdown onClick function
-  console.log('%c isOpen', 'font-size:20px;color:lime;', isOpen);
+
   return (
     <DropdownWrapper>
       <DropdownButton onClick={() => setIsOpen(!isOpen)}>{itemList[selectedIndex]}</DropdownButton>

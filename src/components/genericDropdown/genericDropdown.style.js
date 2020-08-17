@@ -37,6 +37,9 @@ const DropdownItemWrapper = styled.div`
   padding: 10px;
   color: ${(props) => (props.isSelected ? 'black' : 'white')};
   font-weight: ${(props) => (props.isSelected ? '600' : '400')};
+  &:hover {
+    opacity: 0.6;
+  }
 `;
 
 export { DropdownWrapper, DropdownItemsBox, DropdownItemWrapper, DropdownButton };

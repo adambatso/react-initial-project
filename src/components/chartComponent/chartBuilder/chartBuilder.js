@@ -1,18 +1,17 @@
 import React from 'react';
 import { observer, inject } from 'mobx-react';
-
 import CanvasJSReact from '../../../lib/canvasjs.react';
 
 const ChartBuilder = (props) => {
-  const CanvasJS = CanvasJSReact.CanvasJS;
+  const [data, setData] = React.useState();
   const CanvasJSChart = CanvasJSReact.CanvasJSChart;
   const { filteredChartData } = props.charStore;
 
-  const getData = () => {
-    const data = [];
+  React.useEffect(() => {
+    const dataResult = [];
     Object.keys(filteredChartData).forEach((segmentKey) => {
       if (filteredChartData[segmentKey].length) {
-        data.push({
+        dataResult.push({
           type: 'spline',
           name: `${segmentKey}`,
           showInLegend: true,
@@ -20,9 +19,8 @@ const ChartBuilder = (props) => {
         });
       }
     });
-    return data;
-  };
-  const data = getData();
+    setData(dataResult);
+  }, [filteredChartData]);
 
   const options = {
     animationEnabled: true,
@@ -37,7 +35,7 @@ const ChartBuilder = (props) => {
   };
 
   return (
-    <div>
+    <div style={{ marginTop: 30 }}>
       <CanvasJSChart options={options} />
     </div>
   );

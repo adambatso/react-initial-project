@@ -7,8 +7,6 @@ import chartStore from '../../stores/chart-store';
 import ChartComponent from '../chartComponent/chartComponent';
 
 export const ChartPage = () => {
-  console.log('%c chartData', 'font-size:20px;color:lime;', chartData);
-
   const store = new chartStore(chartData);
 
   //TODO:: need to separate dashboard
